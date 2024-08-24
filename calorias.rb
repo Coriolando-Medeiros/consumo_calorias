@@ -2,20 +2,59 @@ def entradas
   puts "Olá, vamos calcular seu índice basal"
   puts "Nome:"
   @nome = gets.chomp.capitalize
-  puts "Peso - kg:"
-  @peso = gets.chomp.to_f
-  puts "Altura - cm:"
-  @altura = gets.chomp.to_f
-  puts "Idade - anos:"
-  @idade = gets.chomp.to_i
+  loop do
+    begin
+      puts "Peso - kg:"
+      @peso = Float(gets.chomp)  # Tenta converter a entrada para um número float
+      break  # Sai do loop se a conversão for bem-sucedida
+    rescue ArgumentError
+      puts "Erro: Isso não é um número válido. Por favor, tente novamente."
+    end
+
+  end
+
+  loop do
+    begin
+      puts "Altura - cm:"
+      @altura = Float(gets.chomp)  # Tenta converter a entrada para um número float
+      break  # Sai do loop se a conversão for bem-sucedida
+    rescue ArgumentError
+      puts "Erro: Isso não é um número válido. Por favor, tente novamente."
+    end
+    
+  end
+
+  loop do
+    begin
+      puts "Idade - anos:"
+      @idade = Integer(gets.chomp)  # Tenta converter a entrada para um número float
+      break  # Sai do loop se a conversão for bem-sucedida
+    rescue ArgumentError
+      puts "Erro: Isso não é um número válido. Por favor, tente novamente."
+    end
+
+  end
+
+end
+
+def menu
   puts "Níveis de atividade:"
   puts "1 - Sedentário"
   puts "2 - Levemente ativo"
   puts "3 - Moderadamente ativo"
   puts "4 - Altamente ativo"
   puts "5 - Extremamente ativo"
-  puts "Opção:"
-  @atividade = gets.chomp.to_i
+
+  loop do
+    begin
+      puts "Opção: "
+      @atividade = Integer(gets.chomp)  # Tenta converter a entrada para um número float
+      break  # Sai do loop se a conversão for bem-sucedida
+    rescue ArgumentError
+      puts "Erro: Isso não é um número válido. Por favor, tente novamente."
+    end
+  end
+
 end
 
 
@@ -52,6 +91,7 @@ def calculo
 end
 
 entradas
+menu
 calculo
 
 #Fazer tratamentos de erros se usuário digitar errado as
