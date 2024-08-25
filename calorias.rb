@@ -130,4 +130,4 @@ end
 entradas
 menu
 calculo_metabolismo
-#calculo_imc
+calculo_imc
