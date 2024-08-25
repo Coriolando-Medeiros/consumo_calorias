@@ -75,14 +75,14 @@ def calculo_imc
   elsif (@imc  >= 25) && (@imc < 30)
     puts "Seu IMC é #{@imc}, acima do peso"
     peso_ideal_max = 24.9 * (@altura_imc * @altura_imc)
-    peso_necessario = @peso_imc - @peso_ideal_max
+    peso_necessario = @peso_imc - peso_ideal_max
     puts "Você deve perder #{'%.2f' % peso_necessario} kg  para ser saudável"
   elsif (@imc >= 30) && (@imc < 35)
-    puts "Seu IMC é #{@imc}, obesidade grau I"
+    puts "Seu IMC é #{'%.2f' % @imc}, obesidade grau I"
     peso_ideal_max = 24.9 * (@altura_imc * @altura_imc)
-    peso_necessario = @peso_imc - @peso_ideal_max
+    peso_necessario = @peso_imc - peso_ideal_max
     puts "Você deve perder #{'%.2f' % peso_necessario} kg  para ser saudável"
-  elsif (@icm >= 35) && (@imc - 40)
+  elsif (@icm >= 35) && (@imc < 40)
     puts "Seu IMC é #{'%.2f' % @imc}, obesidade grau II - Severa"
     peso_ideal_max = 24.9 *(@altura_imc * @altura_imc)
     peso_necessario = @peso_imc - peso_ideal_max
